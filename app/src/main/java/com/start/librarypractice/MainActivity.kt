@@ -36,6 +36,11 @@ class MainActivity : AppCompatActivity() {
             val permissionListener = object : PermissionListener{
                 override fun onPermissionGranted() {
 //                    권한이 최종 획득 완료일때 실행할 코드
+
+//                    CALL 액션을 권한 ok일때만 활용
+                    val myUri = Uri.parse("tel:010-5555-8888")
+                    val myIntent = Intent(Intent.ACTION_CALL, myUri)
+                    startActivity(myIntent)
                 }
 
                 override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
