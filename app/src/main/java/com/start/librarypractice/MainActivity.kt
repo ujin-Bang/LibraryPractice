@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.normal.TedPermission
 import com.start.librarypractice.databinding.ActivityMainBinding
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupEvents(){
-//        이미지뷰 / 텍스트뷰 / LinearLayout 등은 버튼처럼 serOnClickListener 가능.
+//        이미지뷰 / 텍스트뷰 / LinearLayout 등은 버튼처럼 setOnClickListener 가능.
         binding.imgProfile.setOnClickListener {
 
             val myIntent = Intent(this, ViewPhotoActivity::class.java)
@@ -63,5 +64,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setValues(){
 
+        Glide.with(this).load("https://t1.daumcdn.net/cfile/tistory/99E7DE345A52BA9B02").into(binding.imgAction)
     }
 }
