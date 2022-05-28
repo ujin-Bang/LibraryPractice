@@ -22,13 +22,13 @@ class SplashActivity : AppCompatActivity() {
 
 //      2.5초 후에 메인화면으로 이동 => SplashActivity는 종료
 
-        val myHandler = Handler(Looper.getMainLooper())
-        myHandler.postDelayed({
-            val myIntent = Intent(this, MainActivity::class.java)
-            startActivity(myIntent)
-
-            finish()
-
-        }, 2500)
+//        val myHandler = Handler(Looper.getMainLooper())
+//        myHandler.postDelayed({
+//            val myIntent = Intent(this, MainActivity::class.java)
+//            startActivity(myIntent)
+//
+//            finish()
+//
+//        }, 2500)
     }
 }
