@@ -1,7 +1,10 @@
 package com.start.librarypractice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,10 +14,21 @@ class SplashActivity : AppCompatActivity() {
         setValues()
     }
 
-    fun setupEvents(){
+    fun setupEvents() {
 
     }
-    fun setValues(){
 
+    fun setValues() {
+
+//      2.5초 후에 메인화면으로 이동 => SplashActivity는 종료
+
+        val myHandler = Handler(Looper.getMainLooper())
+        myHandler.postDelayed({
+            val myIntent = Intent(this, MainActivity::class.java)
+            startActivity(myIntent)
+
+            finish()
+
+        }, 2500)
     }
 }
